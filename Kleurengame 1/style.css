@@ -1,0 +1,118 @@
+.gameDiv{
+    /* individele div */
+    width: 73px;
+    height: 73px;
+    text-align: center;
+    border-radius: 25%;
+    flex: 1;
+    float: left;
+    line-height: 73px;
+}
+.divgame{
+    /* Hele game */
+    display: flex;
+    flex: 1;
+    border: groove black 5px;
+    max-width: 240px;
+    /* flex-wrap: wrap;
+    width: 170px; */
+}
+.row1{
+    display: flex;
+    flex: 3;
+}
+.row2{
+    display: flex;
+    flex: 3;
+}
+.row3{
+    display: flex;
+    flex: 3;
+}
+.start{
+    width: 100px;
+    height: 25px;
+    background-color: #EFEFEF;
+}
+.start:hover{
+    background-color: #0f0;
+}
+.stop{
+    width: 100px;
+    height: 25px;
+    background-color: #EFEFEF;
+}
+.stop:hover{
+    background-color: #f00;
+}
+#searchColor{
+    text-align: center;
+    border-radius: 5px;
+    width: 214px;
+    color: white;
+    text-shadow: 2px 2px 2px #000;
+    border: groove 3px black;
+}
+#buttons{
+    width: 220px;
+    border: 3px groove black;
+    border-radius: 5px;
+    text-align: center;
+    background: rgb(255,0,0);
+    background: linear-gradient(90deg, rgba(255,0,0,1) 10%, rgba(0,128,0,1) 20%, rgba(128,0,128,1) 30%, rgba(255,192,203,1) 40%, rgba(0,255,255,1) 50%, rgba(255,255,0,1) 60%, rgba(165,42,42,1) 70%, rgba(0,0,255,1) 80%, rgba(255,165,0,1) 90%);}
+#score{
+    display:flex;
+    flex: 1;
+}
+#correct{
+    background-color: #0f0;
+    width: 214px;
+}
+#incorrect{
+    background-color: #f00;
+    width: 214px;
+}
+#incorrect:hover{
+    background-color: white;
+    color: red;
+}
+#correct:hover{
+    background-color: white;
+    color: #0f0;
+}
+#late:hover{
+    background-color: white;
+    color: blue;
+}
+#flex2{
+    Border: black solid 3px;
+    width: 214px;
+    text-align: center;
+    margin-left: 5px;
+    border-radius: 15px;
+}
+#flex{
+    display: flex;}
+#endresult{
+    text-align: left;
+}
+#settings{
+    border: solid black 3px;
+    margin-right: 5px;
+    border-radius: 15px;
+    height: 280px;
+}
+.reload{
+    margin-left: 365px;
+}
+.reload2{
+    background-color: #EFEFEF;
+    transition: 0.1s;
+}
+.reload2:hover{
+    background-color: #0ff;
+}
+#late{
+    background-color: blue;
+    color: white;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <link rel = "stylesheet" href = "style.css">
+            <script src = "game.js"></script>
+            <title>Kleurengame 1</title>
+        </head>
+        <body onload="load()">
+            <!-- <table class="gametable" border="1">
+                <tr>
+                    <td class="gameTD" id="td1" onclick="test('td1')"></td>
+                    <td class="gameTD" id="td2" onclick="test('td2')"></td>
+                    <td class="gameTD" id="td3" onclick="test('td3')"></td>
+                </tr>
+                <tr>
+                    <td class="gameTD" id="td4" onclick="test('td4')"></td>
+                    <td class="gameTD" id="td5" onclick="test('td5')"></td>
+                    <td class="gameTD" id="td6" onclick="test('td6')"></td>
+                </tr>
+                <tr>
+                    <td class="gameTD" id="td7" onclick="test('td7')"></td>
+                    <td class="gameTD" id="td8" onclick="test('td8')"></td>
+                    <td class="gameTD" id="td9" onclick="test('td9')"></td>
+                </tr>
+                <tr>
+                    <td id="searchColor" colspan="4">Kleur</td>
+                </tr>
+            </table> -->
+            <div id="flex">
+                <div id="settings">
+                    <table class="table2">
+                        <tr>
+                            <td class="loops">
+                                Aantal loops
+                            </td>
+                            <td>
+                                <input type="number" onchange="getGlobalVars()" id="nrOfLoops" value="6">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="colors" style=color:red>
+                                Aantal kleuren
+                            </td>
+                            <td>
+                                <input type="text" id="aColors" style=color:red value="Work in Progress" onload="disable_aColors()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="colors">
+                                Aantal sec/loop
+                            </td>
+                            <td>
+                                <input type="number" id="interval" value="1" onchange="getGlobalVars()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="colors" style=color:red>
+                                Loop searchcol.
+                            </td>
+                            <td>
+                                <input type="checkbox" id="changeColor" onchange="getGlobalVars()">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="divgame">
+                <div id="row1">
+                    <div class="gameDiv" id="1">1</div>
+                    <div class="gameDiv" id="2">2</div>
+                    <div class="gameDiv" id="3">3</div>
+                    <div id="score"></div>
+                </div>
+                <br><br><br><br>
+                <div id="row2">
+                    <div class="gameDiv" id="4">4</div>
+                    <div class="gameDiv" id="5">5</div>
+                    <div class="gameDiv" id="6">6</div>
+                </div>
+                <br><br><br><br>
+                <div id="row3">
+                    <div class="gameDiv" id="7">7</div>
+                    <div class="gameDiv" id="8">8</div>
+                    <div class="gameDiv" id="9">9</div>
+                </div>
+                <br><br><br><br>
+                <div id="searchColor">kleur</div>
+                <table id="buttons">
+                    <tr>
+                        <td>
+                <button onclick="startThegame()" class="start" id="start"> Start </button>
+                        </td>
+                        <td>
+                <button onclick="stopThegame()" class="stop" id="start"> Stop </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+                <div id="flex2">
+                    <div id="result">
+                        Resultaat
+                        <div id="testEl"></div>
+                        <div id="endresult">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reload">
+                <form>
+                    <input type="submit" value="RELOAD" class="reload2">
+                </form>
+            </div>    
+        </body>
+    </html>

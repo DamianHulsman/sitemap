@@ -1,0 +1,14 @@
+#container {
+    height:calc(100vh - 10px); 
+    overflow:auto; 
+    border:0px dashed gray;
+  }
+  
+  .tbl_sm {
+    border-collapse:collapse;
+   }
+   
+  .tbl_sm td, .tbl_sm th {
+    border:1px solid gray; 
+    padding:3px 5px;
+  }

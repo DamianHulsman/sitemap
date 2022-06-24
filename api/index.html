@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <scipt src="script.js"></scipt>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+        crossorigin="anonymous"></script>
+        <script>
+            var url="https://15euros.nl/api/bier_basic.php"; 
+$.getJSON(url, function(biertjes, status){
+  //console.log("Data:", data);
+  //console.log("Status:", status);
+  getTable(biertjes);
+});
+
+function getTable(beers) {
+	//console.log(b);
+	var beerTable = $("<table>").addClass("tbl_sm");
+  var tr = $("<tr>")  // maak header row met td's aan
+    	.append( $("<th>").html("naam"   ) )
+    	.append( $("<th>").html("brouwer") )
+    	.append( $("<th>").html("gisting") )
+      .append( $("<th>").html("%"      ) )
+      .append( $("<th>").html("prijs"  ) );
+ 	beerTable.append(tr);
+  
+  $(beers).each(function( key, beer ) {
+    //console.log( beer );
+    var p = beer.perc*100; 
+    tr = $("<tr>")
+    	.append( $("<td>").html(beer.naam   ) )
+    	.append( $("<td>").html(beer.brouwer) )
+    	.append( $("<td>").html(beer.gisting) )
+      .append( $("<td>").html(p.toFixed(2)+"%") )
+      .append( $("<td>").html("&euro;"+beer.inkoop_prijs) );
+    beerTable.append(tr);
+  });
+  
+  $("#divBeer").append(beerTable);
+}
+
+    function laatBiertjesZien(biertjes)
+    {
+        console.log('hoi2');
+        let html = "Biertjes:<br>";
+    }
+</script>
+        <link rel="stylesheet" href="style.css">
+        <title>API test</title>
+    </head>
+    <body>
+        <button onclick='fLaadBier_plainJS()'>Test</button>
+        <div id="beers">hier komen de biertjes</div>
+        <div id="container">
+            <strong>biertjes:</strong>
+            <div id="divBeer"></div>
+        </div>
+    </body>
+</html>

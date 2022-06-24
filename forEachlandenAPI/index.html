@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Basis JSON AJAX (totaal niet gekopieerd)</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+
+<body id="body">
+    <select>
+        <option>land 1</option>
+        <option>land 2</option>
+        <option>land 3</option>
+    </select>
+    <div id="flex" class="flex" style:border="3px solid black">
+        <div style="margin:40px; display: flex;">
+            <div id="subdiv">dit is de subdiv</div>
+            <div id="sidediv">Nog geen land geselcteerd</div>
+        </div>
+    </div>
+    <button onclick="darkmode()">darkmode</button>
+    <script type="text/javascript">
+        let landenlijst;
+
+        $.getJSON("https://restcountries.com/v3.1/all", function (landen) {
+            landenlijst = landen;
+            console.log("landen:", landen);
+            
+            let landenHTML = "<table class='tbl'>";
+
+                landen.forEach(function (objLand, index) {
+
+                    let selectBorders = "-";
+                    let lborders = 0;
+                    if(objLand.borders) {
+                        selectBorders = "<select onchange='fChangeSel(this)'>";
+                        lborders = objLand.borders.length;
+                        // selectBorders += "<option>land a</option>";
+                        // selectBorders += "<option>land b</option>";
+                        // selectBorders += "<option>land c</option>";
+                        objLand.borders.forEach(function (border, index2) {
+                            selectBorders += "<option>" + border + "</option>";
+                        });
+                        selectBorders += "</select>";
+                    }
+                    
+
+                    landenHTML += "<tr>";
+                        landenHTML += "<td>" + objLand.name.common + "</td>";
+                        landenHTML += "<td>" + objLand.capital + "</td>";
+                        landenHTML += "<td>" + selectBorders + "</td>";
+                        landenHTML += "<td>" + lborders + "</td>";
+                        landenHTML += "<td>" + objLand.cca3 + "</td>";
+                    landenHTML += "</tr>";
+                });
+
+            landenHTML += "</table>";
+
+            document.getElementById("subdiv").innerHTML = landenHTML;
+        });
+
+        function fChangeSel(selectBox, objLand) {
+            let selLand = selectBox.value;
+            let htmlselland = "Afkorting = " + selLand;
+            console.log(selLand);
+           
+            landenlijst.forEach(function(land)
+            {
+                //console.log("land.cca3 = " + land.cca3)
+                if(land.cca3 == selLand)
+                {
+                    htmlselland += "<br>Naam = " + land.name.common;
+                    htmlselland += "<br>Aant. inwoners = " + land.population;
+                    htmlselland += "<br>Vlag = " + "<img src='" + land.flags.png + "'width='200px' height='150px'>";
+                }
+            })
+            document.getElementById('sidediv').innerHTML = htmlselland;
+        }
+        function darkmode()
+        {
+            document.getElementById('body').style.backgroundColor = "black";
+        }
+    
+    </script>
+
+</body>
+</html>

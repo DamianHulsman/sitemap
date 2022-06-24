@@ -1,0 +1,33 @@
+body {
+    font-family: verdana;
+    font-size: 12px;
+    background-color: white;
+}
+
+#subdiv, #sidediv {
+    border: 1px solid red;
+    padding: 10px;
+    max-height: 200px;
+    width: 400px;
+    overflow: auto;
+    background-color: white;
+}
+
+.tbl td{
+    border-collapse: collapse;
+    border: 1px solid black;
+    background-color: white;
+}
+
+table {
+    display: table;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+    background-color: aqua;
+}
+.flex{
+    display: flex;
+}
