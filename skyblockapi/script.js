@@ -39,7 +39,8 @@ function getTable(gItems)
       .append( $("<th>").html("True def.") )
       .append( $("<th>").html("Pet luck") )
       .append( $("<th>").html("Pristine") )
-      .append( $("<th>").html("Speed") );
+      .append( $("<th>").html("Speed") )
+      .append( $("<th>").html("Damage") );
 
     itemTable.append(tr);
   
@@ -80,6 +81,9 @@ function getTable(gItems)
         }
         else if(gameItem.stats.walk_speed){
           tr.append( $("<td>").html(gameItem.stats.walking_speed) )
+        }
+	else if(gameItem.stats.walk_speed){
+          tr.append( $("<td>").html(gameItem.stats.damage) )
         }
       }
 
